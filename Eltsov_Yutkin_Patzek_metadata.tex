@@ -1,0 +1,501 @@
+% LaTeX support: latex@mdpi.com 
+% In case you need support, please attach all files that are necessary for compiling as well as the log file, and specify the details of your LaTeX setup (which operating system and LaTeX version / tools you are using).
+
+%=================================================================
+\documentclass[geosciences,article,submit,moreauthors,pdftex]{Definitions/mdpi} 
+% \usepackage{graphics}
+\usepackage{amsthm, amssymb, amsfonts}
+\usepackage{array,longtable}
+\usepackage{overpic}
+\graphicspath{{./Images/}}
+% If you would like to post an early version of this manuscript as a preprint, you may use preprint as the journal and change 'submit' to 'accept'. The document class line would be, e.g., \documentclass[preprints,article,accept,moreauthors,pdftex]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
+
+%--------------------
+% Class Options:
+%--------------------
+%----------
+% journal
+%----------
+% Choose between the following MDPI journals:
+% acoustics, actuators, addictions, admsci, aerospace, agriculture, agriengineering, agronomy, algorithms, animals, antibiotics, antibodies, antioxidants, applsci, arts, asc, asi, atmosphere, atoms, axioms, batteries, bdcc, behavsci, beverages, bioengineering, biology, biomedicines, biomimetics, biomolecules, biosensors, brainsci, buildings, cancers, carbon, catalysts, cells, ceramics, challenges, chemengineering, chemistry, chemosensors, children, cleantechnol, climate, clockssleep, cmd, coatings, colloids, computation, computers, condensedmatter, cosmetics, cryptography, crystals, dairy, data, dentistry, designs, diagnostics, diseases, diversity, drones, econometrics, economies, education, ejihpe, electrochem, electronics, energies, entropy, environments, epigenomes, est, fermentation, fibers, fire, fishes, fluids, foods, forecasting, forests, fractalfract, futureinternet, futurephys, galaxies, games, gastrointestdisord, gels, genealogy, genes, geohazards, geosciences, geriatrics, hazardousmatters, healthcare, heritage, highthroughput, horticulturae, humanities, hydrology, ijerph, ijfs, ijgi, ijms, ijns, ijtpp, informatics, information, infrastructures, inorganics, insects, instruments, inventions, iot, j, jcdd, jcm, jcp, jcs, jdb, jfb, jfmk, jimaging, jintelligence, jlpea, jmmp, jmse, jnt, jof, joitmc, jpm, jrfm, jsan, land, languages, laws, life, literature, logistics, lubricants, machines, magnetochemistry, make, marinedrugs, materials, mathematics, mca, medicina, medicines, medsci, membranes, metabolites, metals, microarrays, micromachines, microorganisms, minerals, modelling, molbank, molecules, mps, mti, nanomaterials, ncrna, neuroglia, nitrogen, notspecified, nutrients, ohbm, optics, particles, pathogens, pharmaceuticals, pharmaceutics, pharmacy, philosophies, photonics, physics, plants, plasma, polymers, polysaccharides, preprints, proceedings, processes, proteomes, psych, publications, quantumrep, quaternary, qubs, reactions, recycling, religions, remotesensing, reports, resources, risks, robotics, safety, sci, scipharm, sensors, separations, sexes, signals, sinusitis, smartcities, sna, societies, socsci, soilsystems, sports, standards, stats, surfaces, surgeries, sustainability, symmetry, systems, technologies, test, toxics, toxins, tropicalmed, universe, urbansci, vaccines, vehicles, vetsci, vibration, viruses, vision, water, wem, wevj
+
+%---------
+% article
+%---------
+% The default type of manuscript is "article", but can be replaced by: 
+% abstract, addendum, article, benchmark, book, bookreview, briefreport, casereport, changes, comment, commentary, communication, conceptpaper, conferenceproceedings, correction, conferencereport, expressionofconcern, extendedabstract, meetingreport, creative, datadescriptor, discussion, editorial, essay, erratum, hypothesis, interestingimages, letter, meetingreport, newbookreceived, obituary, opinion, projectreport, reply, retraction, review, perspective, protocol, shortnote, supfile, technicalnote, viewpoint
+% supfile = supplementary materials
+
+%----------
+% submit
+%----------
+% The class option "submit" will be changed to "accept" by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g., the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
+
+%------------------
+% moreauthors
+%------------------
+% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
+
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. If eps figures are used, remove the option pdftex and use LaTeX and dvi2pdf.
+
+%=================================================================
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{xx}
+\issuenum{1}
+\articlenumber{5}
+\pubyear{2019}
+\copyrightyear{2019}
+%\externaleditor{Academic Editor: name}
+\history{Received: date; Accepted: date; Published: date}
+%\updates{yes} % If there is an update available, un-comment this line
+
+%% MDPI internal command: uncomment if new journal that already uses continuous page numbers 
+%\continuouspages{yes}
+
+%------------------------------------------------------------------
+% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
+%\pdfoutput=1
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, calc, indentfirst, fancyhdr, graphicx, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, amsthm, hyphenat, natbib, hyperref, footmisc, geometry, caption, url, mdframed, tabto, soul, multirow, microtype, tikz
+
+% \PassOptionsToPackage[OT1]{fontenc} % options for packages loaded elsewhere
+%=================================================================
+%% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{Revealing trends in geophysics using metadata analysis}
+
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorA}{0000-0002-7928-5736} % Add \orcidA{} behind the author's name
+\newcommand{\orcidauthorB}{0000-0002-9743-7107} % Add \orcidB{} behind the author's name
+\newcommand{\orcidauthorC}{0000-0002-9389-7579} % Add \orcidB{} behind the author's name
+
+% Authors, for the paper (add full first names)
+\Author{Timofey Eltsov $^{1,\dagger}$\orcidA{}, Maxim Yutkin $^{2}$\orcidB{}, Tadeusz W. Patzek $^{3}$\orcidC{}} % and Firstname Lastname $^{2,}$*}
+
+% Authors, for metadata in PDF
+\AuthorNames{Timofey Eltsov and Tadeusz W. Patzek}
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{$^{1}$ \quad Ali I. Al-Naimi Petroleum Engineering Research Center, King Abdullah University of Science and Technology; timofey.eltsov@kaust.edu.sa\\
+$^{2}$ \quad Ali I. Al-Naimi Petroleum Engineering Research Center, King Abdullah University of Science and Technology; maxim.yutkin@kaust.edu.sa\\
+$^{3}$ \quad Ali I. Al-Naimi Petroleum Engineering Research Center, King Abdullah University of Science and Technology; tadeusz.patzek@kaust.edu.sa}
+
+% Contact information of the corresponding author
+\corres{Correspondence: timofey.eltsov@kaust.edu.sa; Tel.: +966128087182}
+
+% Current address and/or shared authorship
+\firstnote{Current address: 4700 KAUST, Thuwal, 23955-6900, Saudi Arabia}
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+%\simplesumm{} % Simple summary
+
+%\conference{} % An extended version of a conference paper
+
+% Abstract (Do not insert blank lines, i.e. \\) 
+\abstract{Professional language evolution reveals the development of geophysics: researchers enthusiastically describe new methods of survey, data processing techniques, and objects of their study. Geophysicists publish their cutting-edge research at international conferences proceedings to share their achievements with the world. Tracking changes in the language allows one to identify trends and the current state of the science. Here, we describe the  metadata analysis of the last 38 Annual Conferences organized b y the Society of Exploration Geophysicists, one of the biggest geophysical gatherings. The number of publications from oil companies reflects their financial situation; the number of papers from the academia of various countries indicates government financing of research. The USA academia has the most significant number of publications; in 2019, the number of papers from China was almost equal to those of the USA. An analysis of conference materials metadata allows one to identify trends in a specific field of knowledge and predict the development in the near future.}
+
+% Keywords
+\keyword{geophysics; web data analysis; data mining; data analysis; metadata analysis}
+
+% The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
+%\PACS{J0101}
+%\MSC{}
+%\JEL{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Diversity
+%\LSID{\url{http://}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Applied Sciences:
+%\featuredapplication{Authors are encouraged to provide a concise description of the specific application or a potential application of the work. This section is not mandatory.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Data:
+%\dataset{DOI number or link to the deposited data set in cases where the data set is published or set to be published separately. If the data set is submitted and will be published as a supplement to this paper in the journal Data, this field will be filled by the editors of the journal. In this case, please make sure to submit the data set as a supplement when entering your manuscript into our manuscript editorial system.}
+
+%\datasetlicense{license under which the data set is made available (CC0, CC-BY, CC-BY-SA, CC-BY-NC, etc.)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Toxins
+%\keycontribution{The breakthroughs or highlights of the manuscript. Authors can write one or two sentences to describe the most important part of the paper.}
+
+%\setcounter{secnumdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setcounter{section}{-1} %% Remove this when starting to work on the template.
+%\section{How to Use this Template}
+%The template details the sections that can be used in a manuscript. Note that the order and names of article sections may differ from the requirements of the journal (e.g., the positioning of the Materials and Methods section). Please check the instructions for authors page of the journal to verify the correct order and names. For any questions, please contact the editorial office of the journal or support@mdpi.com. For LaTeX related questions please contact latex@mdpi.com.
+%%The order of the section titles is: Introduction, Materials and Methods, Results, Discussion, Conclusions for these journals: aerospace,algorithms,antibodies,antioxidants,atmosphere,axioms,biomedicines,carbon,crystals,designs,diagnostics,environments,fermentation,fluids,forests,fractalfract,informatics,information,inventions,jfmk,jrfm,lubricants,neonatalscreening,neuroglia,particles,pharmaceutics,polymers,processes,technologies,viruses,vision
+
+\section{Introduction}
+The last four decades showed a tremendous change in geophysics. An increase in computing power and technological progress allowed geophysicists to solve more and more complicated tasks. At the same time, the field of application of geophysics is expanding; the market of geophysical services is changing. We assume that a change of geophysical tasks, applications, geography, and technology will inevitably lead to a shift in the professional language. If one can track changes in the frequency of terms used in recent years, one can shed light on the current state of the industry and possibly predict future changes. Authors apply language processing methods to analyze changes in the professional language in geophysics.
+
+The biases of different origin complicate big data \citep{Glauner2018}. In machine learning, the difference between training data set and test data set can cause biases. Massive sample study can lead to bias associated with an error resulting from sampling or study design \citep{Kaplan2014}. Supposedly, it is better to have a smaller and more representative data set rather than a much bigger but biased data. We want to understand what the modern geophysical language looks like and what the future of geophysics will be. In this paper, we analyze only scientific articles presented at the Society of Exploration Geophysicists (SEG) Annual Conference and Exhibition. The committee selects the papers for the conference each year; this is the initial filtering. Also, it is worth noting that presenting at such a meeting is a demonstration of the technical capabilities of industrial companies and the scientific viability of academic institutions. Each annual conference proceedings is a cross-section of the state of geophysics, and we use it for analysis and predictions.
+
+The SEG Annual Conference and Exhibition is one of the biggest gatherings of geophysicists in the world. Abstracts of the SEG Annual Conferences are a representation of the state of geophysical science, approximated mainly to the oil and gas industry. Articles in the electronic version for the 38 years are available for analysis \citep{SEG}. The SEG conducted all their Annual conferences in the USA, and the last one was in San Antonio, TX. For analysis, the authors selected the proceedings of the SEG Annual Conference, as the most representative set, that reflects state-of-art-technologies in geophysics. Each conference proceedings is a reflection of the state of the industry in a particular year since, at this event, both academic institutions and the industry present their best achievements in the field.
+
+Besides conference proceedings, one can use journal articles for data mining as the volume of the data for one year is comparable to the SEG Annual Conference and Exhibition Proceedings. The number of publications per year is smaller, but they consist of full-size papers. However, the release of articles in journals is carried out periodically, e.g., monthly or quarterly; at the conference, this happens once a year. The research materials are usually published in journals and reported at conferences; the proceedings include many of the results from full-sized articles. Moreover, the number of research teams presenting their work is several times larger in the case of analysis of conference materials compared to the study of one particular journal. SEG Annual Conference proceedings represent a collection of scientific research from a large number of scientific teams in one place for each of the 38 years. This approach allows one to conduct a unique study and trace the dynamics of changes in the industry.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Materials and Methods}
+
+We used the OnePetro online library \citep{SPE2019} to get metadata of the reviewed papers. The OnePetro website offers ample opportunities for analyzing metadata. Along with OnePetro, CrossRef service can be used for metadata analysis. Different spelling versions and typos affected the study of affiliation. Besides, many organizations have since ceased to exist (acquired, bankrupt, split, \textit{etc.}), which also complicated the analysis. We use open-source Python libraries: to transform, filter and process the text, and get metadata: TextBlob, NLTK (Natural Language Toolkit), argparse, Pandas, Scrapy, Requests-HTML, sqlite3, and NumPy. For printing the graphs, we use Matplotlib, Plotly, PIL (Python Imaging Library), and others.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=1]{scheme_meta.png}
+\caption{Data processing workflow.}
+\label{scheme_workflow}
+\end{figure}
+
+
+In total, we analyzed 24,500 papers consisting of more than 57 million words or more than 383 million symbols. The number of non-unique authors for the entire time span chosen in this paper exceeds 75 thousand.
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+%\subsection{Academia and Industry}
+
+More than 2400 industry companies and academic institutions from eighty-six countries heve presented their research at the SEG Annual Conference so far. The five companies with the most significant number of publications in the SEG Annual Conference are 1) Schlumberger, 2) WesternGeco, 3) CGG (Compagnie Générale de Géophysique), 4) BGP Inc. (BGP Inc., China National Petroleum Corporation), and 5) BP plc (formerly The British Petroleum Company plc and BP Amoco plc). These five companies accounted for about 30\% of all affiliations in the past ten years. Schlumberger itself constitutes about 8\% of all affiliations, with WesternGeco adding about 5\% in the past ten years. The five most highly represented universities in SEG Annual Conferences over the 38 years are 1) Colorado School of Mines, 2) University of Houston, 3) China University of Petroleum, 4) Stanford University, and 5) Delft University of Technology. 
+ 
+Fig. \ref{acad_world} reveals the average number of papers for the academia by country. Each country is represented by a unique color; the size of the circles is the average number of publications. The inset in the lower-left corner shows a Europe zoom-in. The most considerable contribution is from the universities in the United States of America (the USA, see the five above) followed by universities in China (China University of Petroleum, Jilin University, and Tongji University), and Canada (University of British Columbia). The rest is shared among the Netherlands, France, Germany, and Russia.
+
+China holds the leading position in Asia, followed by smaller but notable contributions from South Korea, Japan, and India. In South America, Brazil academia publishes the most abstracts. In the Middle East, the most represented country at the SEG Annual Meetings is the Kingdom of Saudi Arabia over the past ten years. In 2009 the average number of publications was about one, and in 2019, it is more than 23, which is indeed impressive. None of the academia of the other countries have shown such rapid relative growth in recent years. The total number of publications from the top-50 countries is presented in the appendix, and the full list can be accessed here \citep{Eltsov2020}.
+
+The circle on Antarctica represents incomplete affiliations or affiliations with typos that were not correctly recognized; therefore, it was impossible to determine the location. It provides an estimate of the total error of the analysis.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=\textwidth]{plottly_world3.png}
+\caption{The total number of academic publications by country. Europe is in the zoomed inset on the lower left. The circle on Antarctica represents erroneous affiliations and serves as an error indicator.}
+\label{acad_world}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{acad_indus_plot.png}
+\caption{The annual breakdown of net industry and academia publications.}
+\label{acad_vs_ind}
+\end{figure}
+
+Fig. \ref{acad_vs_ind} compares the annual number of publications from industry and academia. Both contributors show a steady growth over the years, which is associated with an increase in fossil fuel consumption, oil price, and constant-growth-economic paradigm. However, on the finer scale, there is a weak correlation with the oil price change. For example, the number of academic publications was hardly affected by the two recent crises in 2008 and 2014. On average, the number of industrial publications is only partially influenced by the oil price dynamics resulting in a slower growth rate in the last few years. It appears that, on average, the industry became more efficient in research expenditure optimization, which enabled them to maintain a high number of publications and even a slow but consistent growth during the shrinking market.
+
+Curiously, the number of publications from the academia in the last year has fallen significantly. Fig. \ref{acad_vs_ind} indicates a decrease in the number of publications from the USA academia in 2019 compared to 2018. Perhaps this was due to a reduction of state funding of higher educational institutions \citep{Brownstein2018}; see blue curve drop in 2018-2019 Fig. \ref{acad_countries4}.
+
+
+Fig. \ref{co_auth} shows that the number of co-authors per paper has increased and we observe a correlation with the world trend exemplified by a related field of the Earth and Planetary sciences. The increase in the number of authors per paper is a worldwide trend \citep{Mallapaty2018}; scientific research is becoming more interdisciplinary and thus more collaborative. The SEG average co-author number almost flattens out at 3.6 co-authors per paper, but in 2019 the number of authors per paper increased, reaching 3.9. With that, we see an increase in the number of organizations involved in the SEG Annual Conference.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{Co_auth.png}
+\caption{Number of co-authors growth rate for the SEG Annual Conference and for the Earth and Planetary science \citep{Mallapaty2018}.}
+\label{co_auth}
+\end{figure}
+
+Fig. \ref{acad_countries4} shows a breakdown of academic publications by country. The USA academia is ahead of everyone in the number of papers published annually, as well as total articles published. The Netherlands and Canada, have regular contributions, and their publication activity is constant over time. Other countries, like France and Germany, seem to follow the crude oil price trend. In contrast, China maintains a steady growth rate. In 2006 the Chinese government initiated a powerful program of research development, ``Medium and Long-term Plan for the Development of Science and Technology (2006–2020)'' with a target of 2.5\% GERD/GDP ratio by 2020 \citep{UNESCO2015}. The strong support of the government for geoscience, allowed the Chinese academia to exhibit the fastest growth between 2008 and 2015. In 2013, we observed a 15\% increase on R\&D spending by China compared to 2012 \citep{Ni2015}. The number of publications by the Chinese academia is now almost equal to those of the USA.
+
+
+\begin{figure}[ht!]
+
+\begin{overpic}[abs,unit=1mm,width=\textwidth]{4_first_countries.png}
+\put(138.5,70){\citep{Brownstein2018}}
+\put(151.5,40.8){\citep{Ni2015}}
+\put(150,15.3){\citep{UNESCO2015}}
+\end{overpic}
+
+\caption{Average number of publications by academia of the TOP-four countries academia.}
+\label{acad_countries4}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{4_second_countries.png}
+\caption{Average number of publications by France, UK, Germany, and Australia. Crude oil production data is presented online \citep{CEIC2020}.}
+\label{acad_countries8}
+\end{figure}
+
+
+Next, we perform a similar analysis for industry publications. Fig. \ref{serv_comp} shows the average number of papers by oilfield service companies. The most frequent guests at the SEG Annual Conferences are Schlumberger, WesternGeco, CGG, and BGP. Although WesternGeco is a part of Schlumberger, we show them separately according to the affiliation. Schlumberger dominates industrial geophysics research, followed by CGG and BGP. In general, the number of publications by the major oilfield service companies grew steadily. Although oilfield service providers are dependent on oil prices, we surprisingly observe that after the 2014 crisis, the number of Schlumberger publications peaked for several consecutive years, followed by a decline in 2018. It should be noted that in 2014 Schlumberger reported an outstanding revenue of \$48.6 billion. The dynamics of Schlumberger's papers reflect the dynamics of oil prices with a few years offset. The number of CGG publications number follows crude oil prices too, but since 2014, the number of publications from CGG has only declined. CGG Annual report states extremely difficult market environment \citep{CGG2015}, and cost reduction measures: reduction in the number of employees from 11060 to 7353, 55\% general and administrative cost-cutting, 64\% cost of marine monthly structure cost-cutting\footnote{Comparing between 2013 and 2015}. In January 2020 CGG reported its exit from marine acquisition, sale of ships and measuring equipment to Shearwater company \citep{CGG2020}. This news suggests that we will see fewer publications from CGG in the coming years. 
+
+The change in the number of BGP publications shows a similar trend with the crude oil prices with one or two years of delay. In 2019 BGP became a leader by the number of publications among oil service providers.
+
+\begin{figure}[ht!]
+
+
+\begin{overpic}[abs,unit=1mm,width=\textwidth]{Oil_service.png}
+\put(146,68.5){\citep{Schlumberger2014}}
+\put(142,30){\citep{CGG2015}}
+\end{overpic}
+
+\caption{The average number of publications by oil-service companies and OPEC crude oil prices.}
+\label{serv_comp}
+\end{figure}
+
+\begin{figure}[ht!]
+
+\begin{overpic}[abs,unit=1mm,width=\textwidth]{oil_companies.png}
+\put(141,67){\citep{Aramco2018}}
+\put(140.3,50.5){\citep{ExxonMobil2005}}
+\put(133,14){\citep{ExxonMobil2014}}
+\end{overpic}
+
+\caption{The average number of publications by oil production companies.}
+\label{oil_comps}
+\end{figure}
+
+
+Many oil and gas companies that no longer exist made significant contributions to the SEG Annual Conference in the 1980s and early 1990s. They are Arco Oil and Gas Co., Mobil E\&P, OYO Corporation, Statoil, and others. These companies either merged with others, changed their names, or were acquired.
+
+Fig. \ref{oil_comps} displays five oil production companies with the most significant number of publications. The picture is conceptually different from oil service companies. For example, the number of publications by BP and ExxonMobil peaked in 2005 and nowadays, it is declining. 2005 was an outstanding year for ExxonMobil, with a net income of 36 billion and a 31\% increase in the number of employees \citep{ExxonMobil2005}. We observe steady growth in many economic indicators of the company since the beginning of 2000. At the same time, a decrease in the number of publications indicates a difficult period for the company. For instance, in 2014, we found only one paper from ExxonMobil, which has not happened over the past 15 years. The 2014 ExxonMobil Summary Annual Report \citep{ExxonMobil2014} shows that compared to 2013, market valuation at the end of the year decreased by 12\%, and we observe the decline in the stock market price of ExxonMobil in 2015. The decrease in profits immediately affects research financing. Saudi Aramco demonstrates steady growth; it had the biggest number of publications of all production companies in 2017 and 2018. Interestingly enough, the leadership was taken by PetroChina in 2019, followed by Shell and Saudi Aramco.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+
+The amount of hidden information is astounding. Such a study is unique because we have at our disposal a history of the development of geophysics. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+We analyzed metadata of 24,500 papers prepared by more than 75,000 authors during 38 years. Academic institutions from 86 countries and more than 2400 industrial companies contributed to the SEG Annual Conference from 1982 to 2019. The USA academia has the most significant impact in the proceedings of the SEG Annual Conference during the whole observation period. We observe that the number of papers from the Chinese academia growing, and it is almost equal to those of the USA. The activity of the companies at the SEG Annual Conference shows their economic condition, annual reports by CGG and ExxonMobil and other companies confirm this statement. Depending on the financial situation on the market, and the price of oil, the contribution of the academia and industry by publications changes in time. In 2018 we observed more abstracts from the academia, but in 2019 the number of publications from academia and industry were very close. In 2019 the most significant number of publication in the industry was made by BGP and PetroChina. The average number of authors per paper continues to grow over time in agreement with the global trend of Earth and Planetary science, but at a slower rate.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{6pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\authorcontributions{Data mining and processing, software development, original draft preparation - Timofey Eltsov; software development and analysis, review and editing of the draft - Maxim Yutkin; supervision, project administration, historical analysis, review, and editing of the paper - Tadeusz W. Patzek.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\funding{Dr. Eltsov was supported by the KAUST Magnetic Sensor project, REP-2708.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments{Authors appreciate the responsiveness of the SEG team for permission to use digital data and especially SEG Digital Publications Manager, Jeno Mavzer, for the useful advice and help. The authors are grateful to their colleagues, and especially to Dr. Thomas Finkbeiner, for valuable and vital research recommendations. The authors are grateful to Ilya Kolganov for the useful advice on the design of the graphs. We also would like to acknowledge Dr. Charles Russell Severance for an informative Python course.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\conflictsofinterest{The authors declare no conflict of interest.} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+\abbreviations{The following abbreviations are used in this manuscript:\\
+
+\noindent 
+\begin{tabular}{@{}ll}
+ASCII & American standard code for information interchange\\
+BP & BP plc., formerly The British Petroleum Company and BP Amoco\\
+CGG & Compagnie Générale de Géophysique \\
+CMP & Common Mid Point\\
+EAGE & European Association of Geoscientists and Engineers\\
+GDP & Gross Domestic Product\\
+GERD & Gross domestic Expenditure on Research and Development\\
+GPU & Graphics Processing Unit\\
+HTML & HyperText Markup Language\\
+NLTK & Natural Language Toolkit\\
+NMO & Normal Moveout\\
+PDF & Portable Document Format \\
+PIL & Python Imaging Library\\
+R\&D & Research and Development\\
+SEG & Society of Exploration Geophysicists\\
+SPE & Society of Petroleum Engineers\\
+SPWLA & Society of Petrophysicists and Well Log Analysts \\
+USA & The United States of America
+\end{tabular}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+\appendixtitles{yes} %Leave argument "no" if all appendix headings stay EMPTY (then no dot is printed after "Appendix A"). If the appendix sections contain a heading then change the argument to "yes".
+\appendix
+\section{The total number of publication by country}
+\begin{tabular}{@{}p{0.5cm}<{}@{}p{9cm}<{\dotfill}@{}p{\dimexpr\linewidth-4cm}@{}}
+\textbf{\#} & \textbf{Country name} & \textbf{The total number of publications} \\
+1 & United States of America & 5154.07\\
+2 & China & 1649.95\\
+3 & Canada & 952.47\\
+4 & Netherlands & 608.58\\
+5 & France & 546.53\\
+6 & United Kingdom of Great Britain and Northern Ireland & 462.14\\
+7 & Germany & 330.39\\
+8 & Australia & 302.54\\
+9 & Brazil & 264.0\\
+10 & Japan & 205.62\\
+11 & Russian Federation & 178.75\\
+12 & Norway & 176.36\\
+13 & Italy & 164.11\\
+14 & Saudi Arabia & 145.46\\
+15 & Korea, Republic of & 138.62\\
+16 & Switzerland & 113.01\\
+17 & India & 99.08\\
+18 & Mexico & 62.15\\
+19 & Denmark & 57.58\\
+20 & Israel & 55.69\\
+21 & Taiwan & 49.44\\
+22 & Sweden & 41.45\\
+23 & Venezuela (Bolivarian Republic of) & 28.01\\
+24 & Argentina & 25.78\\
+25 & South Africa & 24.53\\
+26 & Nigeria & 23.96\\
+27 & United Arab Emirates & 19.75\\
+28 & Czechia & 19.34\\
+29 & Spain & 17.86\\
+30 & Egypt & 16.52\\
+31 & Singapore & 14.98\\
+32 & New Zealand & 14.77\\
+33 & Romania & 13.7\\
+34 & Indonesia & 13.42\\
+35 & Malaysia & 12.66\\
+36 & Greece & 12.06\\
+37 & Portugal & 11.74\\
+38 & Ukraine & 11.08\\
+39 & Colombia & 10.25\\
+40 & Finland & 9.8\\
+41 & Austria & 6.92\\
+42 & Iran & 6.78\\
+43 & Belgium & 5.43\\
+44 & Slovakia & 5.35\\
+45 & Ireland & 5.26\\
+46 & Poland & 5.22\\
+47 & Turkey & 5.2\\
+48 & Serbia & 4.5\\
+49 & Thailand & 4.34\\
+50 & Jamaica & 4.32\\
+\end{tabular}
+
+%\unskip
+%\subsection{}
+%The appendix is an optional section that can contain details and data supplemental to the main text. For example, explanations of experimental details that would disrupt the flow of the main text, but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data is shown in the main text can be added here if brief, or as Supplementary data. Mathematical proofs of results not central to the paper can be added as an appendix.
+%%
+%\section{}
+%All appendix sections must be cited in the main text. In the appendixes, Figures, Tables, etc. should be labeled starting with `A', e.g., Figure A1, Figure A2, etc. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reftitle{References}
+
+% Please provide either the correct journal abbreviation (e.g. according to the "List of Title Word Abbreviations" http://www.issn.org/services/online-services/access-to-the-ltwa/) or the full name of the journal.
+% Citations and References in Supplementary files are permitted provided that they also appear in the reference list here. 
+
+%=====================================
+% References, variant A: external bibliography
+%=====================================
+%\externalbibliography{yes}
+%\bibliography{your_external_BibTeX_file}
+%\bibliography{timaref}
+%=====================================
+% References, variant B: internal bibliography
+%=====================================
+\begin{thebibliography}{999}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[Glauner \em{et~al.}(2018)Glauner, Valtchev, and State]{Glauner2018}
+Glauner, P.; Valtchev, P.; State, R.
+\newblock {Impact of Biases in Big Data}.
+\newblock In~Proceedings of the European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, Bruges, Belgium, 25-27 April~2018; pp 645--654.
+
+\bibitem[Kaplan \em{et~al.}(2014)Kaplan, Chambers, and Glasgow]{Kaplan2014}
+Kaplan, R.; Chambers, D.A.; Glasgow, R.E.
+\newblock {Big Data and Large Sample Size: A Cautionary Note on the Potential for Bias}.
+\newblock {\em CTS Journal} {\bf 2014}, {\em 7}, {4}, ~342--346.
+\newblock
+ doi:{\changeurlcolor{black}\href{ https://doi.org/10.1111/cts.12178}{\detokenize{10.1111/cts.12178}}}.
+
+\bibitem[SEG, (2019)]{SEG}
+\newblock {SEG Technical Program Expanded Abstracts. Available online: https://library.seg.org/series/segeab (Accessed on 2 December 2019)}.
+
+\bibitem[OnePetro, (2019)]{SPE2019}
+\newblock {OnePetro online library. Available online: https://www.onepetro.org (Accessed on 2 December 2019)}.
+
+
+\bibitem[Eltsov (2020)]{Eltsov2020}
+Eltsov, T.
+\newblock {Data for SEG Annual Conferences analysis, 1982 - 2019. Available online: https://github.com/ANPERC-source/SEG\_Annual (Accessed on 2 February 2020)}.
+
+
+\bibitem[American Higher Education Hits a Dangerous Milestone, (2018)]{Brownstein2018}
+\newblock {American Higher Education Hits a Dangerous Milestone}. \newblock {Available online: https://www.theatlantic.com/\\politics/archive/2018/05/american-higher-education-hits-a-dangerous-milestone/559457/ (Accessed on 2 December 2019)}
+%author = {Brownstein, Ronald},
+%shorturl.at/PRWYZ (Accessed on 2 December 2019)}.
+
+\bibitem[Mallapaty (2018)]{Mallapaty2018}
+\newblock {Paper authorship goes hyper. Available online: https://www.natureindex.com/news-blog/paper-authorship-\\goes-hyper (Accessed on 17 October 2019)}.
+
+
+\bibitem[UNESCO (2015)]{UNESCO2015}
+UNESCO.
+\newblock {\emph{UNESCO SCIENCE REPORT, Towards 2030}};
+\newblock Report; {United Nations Educational, Paris, France}, 2015.
+
+\bibitem[Ni (2015)]{Ni2015}
+Ni, X.
+\newblock {China's research \& development spend}.
+\newblock {\em Nature} {\bf 2015}, {\em 520}, {S8-S9}.
+\newblock
+ doi:{\changeurlcolor{black}\href{ https://doi.org/10.1038/520S8a}{\detokenize{10.1038/520S8a}}}.
+
+
+\bibitem[CEIC (2020)]{CEIC2020}
+\newblock {Global Economic Data, Indicators, Charts\& Forecasts, CEIC. Available online: https://www.ceicdata.com (Accessed on 10 February 2020)}.
+
+\bibitem[CGG(2015)]{CGG2015}
+Compagnie Générale de Géophysique
+\newblock {\emph{ANNUAL REPORT 2015}};
+\newblock Report; {CGG: Chicago, Ill., USA} 2015.
+
+\bibitem[CGG (2020)]{CGG2020}
+Compagnie Générale de Géophysique
+\newblock {CGG completes its exit from marine acquisition. Available online: https://www.cgg.com/en/Investors/Press-Releases/2020/01/CGG-Completes-its-Exit-from-Marine-\\Acquisition (Accessed on 2 February 2020)}.
+
+
+\bibitem[Schlumberger(2014)]{Schlumberger2014}
+Schlumberger.
+\newblock {\emph{2014 Annual Report}};
+\newblock Report; {Schlumberger: Paris, France} 2015.
+
+\bibitem[Saudi Aramco(2018)]{Aramco2018}
+Saudi Aramco.
+\newblock {Saudi Arabian Oil Company, Consolidated financial statements for the year ended december 31, 2018. Available online: https://www.saudiaramco.com/-/media/publications/corporate-reports/saudi-aramco-results-2017-2018\\-full-financials.pdf (Accessed on 11 February 2020)}.
+
+\bibitem[ExxonMobil(2005)]{ExxonMobil2005}
+ExxonMobil.
+\newblock {\emph{Summary Annual Report 2005}};
+\newblock Report; {ExxonMobil: Irving, TX, USA,} 2005.
+
+\bibitem[ExxonMobil(2014)]{ExxonMobil2014}
+ExxonMobil.
+\newblock {\emph{Summary Annual Report 2014}};
+\newblock Report; {ExxonMobil: Irving, TX, USA,} 2014.
+
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+%\sampleavailability{Samples of the compounds ...... are available from the authors.}
+
+%% for journal Sci
+%\reviewreports{\\
+%Reviewer 1 comments and authors’ response\\
+%Reviewer 2 comments and authors’ response\\
+%Reviewer 3 comments and authors’ response
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
