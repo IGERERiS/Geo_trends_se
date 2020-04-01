@@ -2,7 +2,7 @@
 % In case you need support, please attach all files that are necessary for compiling as well as the log file, and specify the details of your LaTeX setup (which operating system and LaTeX version / tools you are using).
 
 %=================================================================
-\documentclass[geosciences,article,submit,moreauthors,pdftex]{Definitions/mdpi} 
+\documentclass[energies,article,submit,moreauthors,pdftex]{Definitions/mdpi} 
 % \usepackage{graphics}
 \usepackage{amsthm, amssymb, amsfonts}
 \usepackage{array,longtable}
@@ -102,7 +102,8 @@ $^{3}$ \quad Ali I. Al-Naimi Petroleum Engineering Research Center, King Abdulla
 %\conference{} % An extended version of a conference paper
 
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{Professional language evolution reveals the development of geophysics: researchers enthusiastically describe new methods of survey, data processing techniques, and objects of their study. Geophysicists publish their cutting-edge research at international conferences proceedings to share their achievements with the world. Tracking changes in the language allows one to identify trends and the current state of the science. Here, we describe the  metadata analysis of the last 38 Annual Conferences organized b y the Society of Exploration Geophysicists, one of the biggest geophysical gatherings. The number of publications from oil companies reflects their financial situation; the number of papers from the academia of various countries indicates government financing of research. The USA academia has the most significant number of publications; in 2019, the number of papers from China was almost equal to those of the USA. An analysis of conference materials metadata allows one to identify trends in a specific field of knowledge and predict the development in the near future.}
+\abstract{Computing power is limited in its capacity to process the ever increasing available data. The information space is so clogged that it is often impossible to find the necessary data among millions of terabytes. Amidst all the  the abundance of information, we propose to turn to the analysis of metadata of publications in the geophysical field of knowledge. An analysis of the publication activity of oil producing and oilfield service companies will shed light on the state of the geophysical market. Here, we describe the  metadata analysis of the last 38 Annual Conferences organized by the Society of Exploration Geophysicists, one of the biggest geophysical gatherings. The number of publications from industrial companies in the energy sector has a direct link with the financial situation. Publications from the academia of various countries tell us about state funding of research in each country and indirectly reflect the geopolitical situation in the world. The changing number of publications over time shows us the dynamics of the transformation of the geophysical market and allows us to understand what is happening and make forecasts. In 2018, Schlumberger and Saudi Aramco had the highest number of publications among service and production companies. In 2019, BGP and PetroChina took the lead. Throughout history, the USA academia have had the highest number of publications but in 2019 the Chinese academia came close to taking the lead.}
+
 
 % Keywords
 \keyword{geophysics; web data analysis; data mining; data analysis; metadata analysis}
@@ -143,18 +144,16 @@ $^{3}$ \quad Ali I. Al-Naimi Petroleum Engineering Research Center, King Abdulla
 %%The order of the section titles is: Introduction, Materials and Methods, Results, Discussion, Conclusions for these journals: aerospace,algorithms,antibodies,antioxidants,atmosphere,axioms,biomedicines,carbon,crystals,designs,diagnostics,environments,fermentation,fluids,forests,fractalfract,informatics,information,inventions,jfmk,jrfm,lubricants,neonatalscreening,neuroglia,particles,pharmaceutics,polymers,processes,technologies,viruses,vision
 
 \section{Introduction}
-The last four decades showed a tremendous change in geophysics. An increase in computing power and technological progress allowed geophysicists to solve more and more complicated tasks. At the same time, the field of application of geophysics is expanding; the market of geophysical services is changing. We assume that a change of geophysical tasks, applications, geography, and technology will inevitably lead to a shift in the professional language. If one can track changes in the frequency of terms used in recent years, one can shed light on the current state of the industry and possibly predict future changes. Authors apply language processing methods to analyze changes in the professional language in geophysics.
 
-The biases of different origin complicate big data \citep{Glauner2018}. In machine learning, the difference between training data set and test data set can cause biases. Massive sample study can lead to bias associated with an error resulting from sampling or study design \citep{Kaplan2014}. Supposedly, it is better to have a smaller and more representative data set rather than a much bigger but biased data. We want to understand what the modern geophysical language looks like and what the future of geophysics will be. In this paper, we analyze only scientific articles presented at the Society of Exploration Geophysicists (SEG) Annual Conference and Exhibition. The committee selects the papers for the conference each year; this is the initial filtering. Also, it is worth noting that presenting at such a meeting is a demonstration of the technical capabilities of industrial companies and the scientific viability of academic institutions. Each annual conference proceedings is a cross-section of the state of geophysics, and we use it for analysis and predictions.
+The amount of data is constantly increasing over the years. In 2018 the total estimated size of the Datasphere was 33 zettabytes (ZB) with a pridiction of 175 ZB in 2025 \citep{Reinsel2018}. Utilization of one GB of information was estimated to be 5.12 kWh \citep{Costenaro2012}. It was about \$0.51 back in 2012. It should be noted that in 2012 Information and Communication Technology (ICT) related products and services accounted for 4.6\% of worldwide electricity consumption \citep{Heddeghem2014} and it keeps growing. The global electricity demand on data centers in 2018 was estimated to be 198 TWh, which is almost 1\% of the global final demand for electricity \citep{Dulac2019}. Wherein Swedish KTH\footnote{KTH Royal Institute of Technology in Stockholm} report indicate that  about  10\% of the world’s total electricity consumption is being used by the internet \citep{KTH2019}. Estimated increase in datasphere size suggests an inevitable increase in energy consumption over time. In this case, an almost linear increase in energy consumption can be assumed. BP, in  its review on world energy, reports that in 2019, 84\% of the total energy was produced by burning coal, natural gas, and oil \citep{BP2019}. The 16\% was produced by nuclear, hydro, and renewables. Therefore, we can say that a five-fold increase in the datasphere will require a five-fold increase in the burning of valuable hydrocarbons by 2025. Researchers are inclined to argue that the amount of data is only growing, and we are generating ``informational debt.'' Only a small part of the information is being processed, leaving the bulk for storage. If in doubt, remember the last time you sorted photos from your phone and deleted unnecessary ones. The authors ask you to think, is it time to process the accumulated information debt and draw important conclusions?
 
-The SEG Annual Conference and Exhibition is one of the biggest gatherings of geophysicists in the world. Abstracts of the SEG Annual Conferences are a representation of the state of geophysical science, approximated mainly to the oil and gas industry. Articles in the electronic version for the 38 years are available for analysis \citep{SEG}. The SEG conducted all their Annual conferences in the USA, and the last one was in San Antonio, TX. For analysis, the authors selected the proceedings of the SEG Annual Conference, as the most representative set, that reflects state-of-art-technologies in geophysics. Each conference proceedings is a reflection of the state of the industry in a particular year since, at this event, both academic institutions and the industry present their best achievements in the field.
+Data processing itself is important, but also new approaches to processing are crucial. Here we analyze the geophysical market based on the proceedings of the Society of Exploration Geophysicists (SEG) Annual Conferences. To understand the changes in the energy sector, the geophysical market is very important, because it is geophysicists who find and explore the mineral deposits on which our civilization is based. Changes in the geophysics sector with a time delay triggers a response in the energy sector. The SEG Annual Conference and Exhibition is one of the most significant gatherings of geophysicists in the world. A presentation at this conference raises the prestige of companies and shows the scientific viability of academic institutions. These conferences have been held annually for many decades and we have access to online conference materials over the past 38 years \citep{SEG}. Researchers and engineers report on their cutting-edge developments, and so we get an annual account of the most relevant technologies. We see that the number of publications from oil and oilfield service companies reflects their economic situation on the market, and the number of publications from academia in various countries speaks of state funding for scientific work. The authors have not seen such an approach to the processing of published materials, and we suggest the possibility of using our approach in other areas. 
 
-Besides conference proceedings, one can use journal articles for data mining as the volume of the data for one year is comparable to the SEG Annual Conference and Exhibition Proceedings. The number of publications per year is smaller, but they consist of full-size papers. However, the release of articles in journals is carried out periodically, e.g., monthly or quarterly; at the conference, this happens once a year. The research materials are usually published in journals and reported at conferences; the proceedings include many of the results from full-sized articles. Moreover, the number of research teams presenting their work is several times larger in the case of analysis of conference materials compared to the study of one particular journal. SEG Annual Conference proceedings represent a collection of scientific research from a large number of scientific teams in one place for each of the 38 years. This approach allows one to conduct a unique study and trace the dynamics of changes in the industry.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materials and Methods}
 
-We used the OnePetro online library \citep{SPE2019} to get metadata of the reviewed papers. The OnePetro website offers ample opportunities for analyzing metadata. Along with OnePetro, CrossRef service can be used for metadata analysis. Different spelling versions and typos affected the study of affiliation. Besides, many organizations have since ceased to exist (acquired, bankrupt, split, \textit{etc.}), which also complicated the analysis. We use open-source Python libraries: to transform, filter and process the text, and get metadata: TextBlob, NLTK (Natural Language Toolkit), argparse, Pandas, Scrapy, Requests-HTML, sqlite3, and NumPy. For printing the graphs, we use Matplotlib, Plotly, PIL (Python Imaging Library), and others.
+We used the OnePetro online library \citep{SPE2019} to get metadata of the reviewed papers. The OnePetro website offers ample opportunities for analyzing metadata. Along with OnePetro, CrossRef service can be used for metadata analysis. Different spelling versions and typos affected the study of affiliation. Besides, many organizations have since ceased to exist (acquired, bankrupt, split, \textit{etc.}), which also complicated the analysis. We use open-source Python libraries to get and process metadata: Requests-HTML, sqlite3, and NumPy. For printing the graphs, we use Matplotlib, Plotly, PIL (Python Imaging Library), and others.
 
 
 \begin{figure}[ht!]
@@ -165,18 +164,18 @@ We used the OnePetro online library \citep{SPE2019} to get metadata of the revie
 \end{figure}
 
 
-In total, we analyzed 24,500 papers consisting of more than 57 million words or more than 383 million symbols. The number of non-unique authors for the entire time span chosen in this paper exceeds 75 thousand.
+In total, we analyzed 24,500 papers for the 38 years period. The number of non-unique authors for the entire time span chosen in this paper exceeds 75 thousand. Fig. \ref{scheme_workflow} shows the data processing workflow. We received metadata for all 38 conferences and sorted them into academia and industry. After that, we sorted all affiliations from the industry into various companies and academic affiliations by various countries. Not all affiliations were complete; sometimes they looked like ``University of'', ``Geological Institute'', ``Unive'', ``Faculty of Geology and Mining'' \textit{etc.} This did not allow us to determine the country of such an institution, while it was clear that this was an academic institution. In this case, we define such an affiliation as an ``unknown academic institution'' and included it in a special list. 
+
+After initial filtration, we count the number of affiliations per year from each particular company or academia of a particular country and analyze the change during time. The average number of authors per paper is growing over the years. There are many articles written jointly by authors from different companies. We divided the total number of affiliations from all the industrial companies and the academia by the average number of co-authors for each year. If one author used multiple affiliations, we took into account only the first mentioned. It is easy to identify large company affiliations and typos in the spelling of their names; it is most difficult to analyze industrial companies that published less than 10 times. Since the authors of these publications often allowed different spelling of their company name, we distributed them into different groups. We take note of the number of typographical errors of the  Schlumberger company name. It truly ranks first among all other companies: ``Schiumberger'', ``Schulmberger'', ``Shlumberger'', ``Schlumbeger'', ``Schlumbrrger'' \textit{etc.} The errors are partly due to carelessness and  incorrect machine recognition, but it is worth paying tribute to the Schlumberger company, which published the highest number of articles over the observed period.
 
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 %\subsection{Academia and Industry}
 
-More than 2400 industry companies and academic institutions from eighty-six countries heve presented their research at the SEG Annual Conference so far. The five companies with the most significant number of publications in the SEG Annual Conference are 1) Schlumberger, 2) WesternGeco, 3) CGG (Compagnie Générale de Géophysique), 4) BGP Inc. (BGP Inc., China National Petroleum Corporation), and 5) BP plc (formerly The British Petroleum Company plc and BP Amoco plc). These five companies accounted for about 30\% of all affiliations in the past ten years. Schlumberger itself constitutes about 8\% of all affiliations, with WesternGeco adding about 5\% in the past ten years. The five most highly represented universities in SEG Annual Conferences over the 38 years are 1) Colorado School of Mines, 2) University of Houston, 3) China University of Petroleum, 4) Stanford University, and 5) Delft University of Technology. 
- 
-Fig. \ref{acad_world} reveals the average number of papers for the academia by country. Each country is represented by a unique color; the size of the circles is the average number of publications. The inset in the lower-left corner shows a Europe zoom-in. The most considerable contribution is from the universities in the United States of America (the USA, see the five above) followed by universities in China (China University of Petroleum, Jilin University, and Tongji University), and Canada (University of British Columbia). The rest is shared among the Netherlands, France, Germany, and Russia.
+Fig. \ref{acad_world} reveals the average number of papers for academia by country. Each country is represented by a unique color; the size of the circles is the average number of publications. The inset in the lower-left corner shows a Europe zoom-in. The most considerable contribution is from the universities in the United States of America (the USA, see the five above) followed by universities in China (China University of Petroleum, Jilin University, and Tongji University), and Canada (University of British Columbia). The rest is shared among the Netherlands, France, Germany, and Russia.
 
-China holds the leading position in Asia, followed by smaller but notable contributions from South Korea, Japan, and India. In South America, Brazil academia publishes the most abstracts. In the Middle East, the most represented country at the SEG Annual Meetings is the Kingdom of Saudi Arabia over the past ten years. In 2009 the average number of publications was about one, and in 2019, it is more than 23, which is indeed impressive. None of the academia of the other countries have shown such rapid relative growth in recent years. The total number of publications from the top-50 countries is presented in the appendix, and the full list can be accessed here \citep{Eltsov2020}.
+China holds the leading position in Asia, followed by smaller but notable contributions from South Korea, Japan, and India. In South America, Brazil academia published the highest number of abstracts. In the Middle East, the most represented country at the SEG Annual Meetings over the past ten years is the Kingdom of Saudi Arabia. In 2009 the average number of publications was about one, and in 2019, it is more than 23, which is indeed impressive. None of the academia of the other countries have shown such rapid relative growth in recent years. The total number of publications from the top-50 countries is presented in the appendix, and the full list can be accessed here \citep{Eltsov2020}.
 
 The circle on Antarctica represents incomplete affiliations or affiliations with typos that were not correctly recognized; therefore, it was impossible to determine the location. It provides an estimate of the total error of the analysis.
 
@@ -194,12 +193,12 @@ The circle on Antarctica represents incomplete affiliations or affiliations with
 \label{acad_vs_ind}
 \end{figure}
 
-Fig. \ref{acad_vs_ind} compares the annual number of publications from industry and academia. Both contributors show a steady growth over the years, which is associated with an increase in fossil fuel consumption, oil price, and constant-growth-economic paradigm. However, on the finer scale, there is a weak correlation with the oil price change. For example, the number of academic publications was hardly affected by the two recent crises in 2008 and 2014. On average, the number of industrial publications is only partially influenced by the oil price dynamics resulting in a slower growth rate in the last few years. It appears that, on average, the industry became more efficient in research expenditure optimization, which enabled them to maintain a high number of publications and even a slow but consistent growth during the shrinking market.
+Fig. \ref{acad_vs_ind} compares the annual number of publications from industry and academia. Both contributors show a steady growth over the years, which is associated with an increase in fossil fuel consumption, oil price, and constant-growth-economic paradigm. However, on the finer scale, there is a weak correlation with the oil price change. For example, the number of academic publications was hardly affected by the two recent crises in 2008 and 2014. On average, the number of industrial publications is only partially influenced by the oil price dynamics resulting in a slower growth rate in the last few years. It appears that, on average, industry became more efficient in research expenditure optimization, which enabled them to maintain a high number of publications and even a slow but consistent growth during the shrinking market.
 
-Curiously, the number of publications from the academia in the last year has fallen significantly. Fig. \ref{acad_vs_ind} indicates a decrease in the number of publications from the USA academia in 2019 compared to 2018. Perhaps this was due to a reduction of state funding of higher educational institutions \citep{Brownstein2018}; see blue curve drop in 2018-2019 Fig. \ref{acad_countries4}.
+Curiously, the number of publications from academia in 2019 fell significantly. Fig. \ref{acad_vs_ind} indicates a decrease in the number of publications from the USA academia in 2019 compared to 2018. Perhaps this was due to a reduction in state funding of higher educational institutions \citep{Brownstein2018}; see blue curve drop in 2018-2019 Fig. \ref{acad_countries4}.
 
 
-Fig. \ref{co_auth} shows that the number of co-authors per paper has increased and we observe a correlation with the world trend exemplified by a related field of the Earth and Planetary sciences. The increase in the number of authors per paper is a worldwide trend \citep{Mallapaty2018}; scientific research is becoming more interdisciplinary and thus more collaborative. The SEG average co-author number almost flattens out at 3.6 co-authors per paper, but in 2019 the number of authors per paper increased, reaching 3.9. With that, we see an increase in the number of organizations involved in the SEG Annual Conference.
+Fig. \ref{co_auth} shows that the number of co-authors per paper has increased, and we observe a correlation with the world trend exemplified by a related field of the Earth and Planetary sciences. The increase in the number of authors per paper is a worldwide trend \citep{Mallapaty2018}; scientific research is becoming more interdisciplinary and thus more collaborative. The SEG average co-author number almost flattens out at 3.6 co-authors per paper, but in 2019 the number of authors per paper increased, reaching 3.9. With that, we see an increase in the number of organizations involved in the SEG Annual Conference.
 
 \begin{figure}[ht!]
 \centering
@@ -208,18 +207,31 @@ Fig. \ref{co_auth} shows that the number of co-authors per paper has increased a
 \label{co_auth}
 \end{figure}
 
-Fig. \ref{acad_countries4} shows a breakdown of academic publications by country. The USA academia is ahead of everyone in the number of papers published annually, as well as total articles published. The Netherlands and Canada, have regular contributions, and their publication activity is constant over time. Other countries, like France and Germany, seem to follow the crude oil price trend. In contrast, China maintains a steady growth rate. In 2006 the Chinese government initiated a powerful program of research development, ``Medium and Long-term Plan for the Development of Science and Technology (2006–2020)'' with a target of 2.5\% GERD/GDP ratio by 2020 \citep{UNESCO2015}. The strong support of the government for geoscience, allowed the Chinese academia to exhibit the fastest growth between 2008 and 2015. In 2013, we observed a 15\% increase on R\&D spending by China compared to 2012 \citep{Ni2015}. The number of publications by the Chinese academia is now almost equal to those of the USA.
+More than 2400 industry companies and academic institutions from eighty-six countries have presented their research at the SEG Annual Conference so far. The five companies with the most significant number of publications in the SEG Annual Conference are 1) Schlumberger, 2) WesternGeco, 3) CGG (Compagnie Générale de Géophysique), 4) BGP Inc. (BGP Inc., China National Petroleum Corporation), and 5) BP plc (formerly The British Petroleum Company plc and BP Amoco plc). These five companies accounted for about 30\% of all affiliations in the past ten years. Schlumberger constitutes about 8\% of all affiliations, with WesternGeco adding about 5\% in the past ten years. Fig. \ref{companies_hist} breaks down the number of companies with the corresponding number of publications. There are only two companies that on average have published more than 500 publications (Schlumberger and CGG), and there are more than 2100 companies that published five papers and less. The number of companies that have published less than five papers over the years is gradually growing \citep{Eltsov2020}. 
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{companies_hist.png}
+\caption{Average number of paper vs. number of companies that publish the papers.}
+\label{companies_hist}
+\end{figure} 
+ 
+The five most highly represented universities in SEG Annual Conferences over the 38 years are 1) Colorado School of Mines, 2) University of Houston, 3) China University of Petroleum, 4) Stanford University, and 5) Delft University of Technology. 
+
+
+Fig. \ref{acad_countries4} shows a breakdown of academic publications by country. The USA academia is ahead of everyone in the number of papers published annually, as well as the total articles published. The Netherlands and Canada, have regular contributions, and their publication activity is constant over time. Other countries, like France and Germany, seem to follow the crude oil price trend. In contrast, China maintains a steady growth rate. In 2006 the Chinese government initiated a powerful program of research development, ``Medium and Long-term Plan for the Development of Science and Technology (2006–2020)'' with a target of 2.5\% GERD/GDP ratio by 2020 \citep{UNESCO2015}. The strong support of the government for geoscience, allowed the Chinese academia to exhibit the fastest growth between 2008 and 2015. In 2013, we observed a 15\% increase in R\&D spending by China compared to 2012 \citep{Ni2015}. The number of publications by the Chinese academia is now almost equal to those of the USA.
 
 
 \begin{figure}[ht!]
 
 \begin{overpic}[abs,unit=1mm,width=\textwidth]{4_first_countries.png}
-\put(138.5,70){\citep{Brownstein2018}}
+\put(139,70){\citep{Brownstein2018}}
 \put(151.5,40.8){\citep{Ni2015}}
-\put(150,15.3){\citep{UNESCO2015}}
+\put(150.9,15.3){\citep{UNESCO2015}}
 \end{overpic}
 
-\caption{Average number of publications by academia of the TOP-four countries academia.}
+\caption{Average number of publications by academia of the TOP-four countries.}
 \label{acad_countries4}
 \end{figure}
 
@@ -231,7 +243,7 @@ Fig. \ref{acad_countries4} shows a breakdown of academic publications by country
 \end{figure}
 
 
-Next, we perform a similar analysis for industry publications. Fig. \ref{serv_comp} shows the average number of papers by oilfield service companies. The most frequent guests at the SEG Annual Conferences are Schlumberger, WesternGeco, CGG, and BGP. Although WesternGeco is a part of Schlumberger, we show them separately according to the affiliation. Schlumberger dominates industrial geophysics research, followed by CGG and BGP. In general, the number of publications by the major oilfield service companies grew steadily. Although oilfield service providers are dependent on oil prices, we surprisingly observe that after the 2014 crisis, the number of Schlumberger publications peaked for several consecutive years, followed by a decline in 2018. It should be noted that in 2014 Schlumberger reported an outstanding revenue of \$48.6 billion. The dynamics of Schlumberger's papers reflect the dynamics of oil prices with a few years offset. The number of CGG publications number follows crude oil prices too, but since 2014, the number of publications from CGG has only declined. CGG Annual report states extremely difficult market environment \citep{CGG2015}, and cost reduction measures: reduction in the number of employees from 11060 to 7353, 55\% general and administrative cost-cutting, 64\% cost of marine monthly structure cost-cutting\footnote{Comparing between 2013 and 2015}. In January 2020 CGG reported its exit from marine acquisition, sale of ships and measuring equipment to Shearwater company \citep{CGG2020}. This news suggests that we will see fewer publications from CGG in the coming years. 
+Next, we perform a similar analysis for industry publications. Fig. \ref{serv_comp} shows the average number of papers by oilfield service companies. The most frequent guests at the SEG Annual Conferences are Schlumberger, WesternGeco, CGG, and BGP. Although WesternGeco is a part of Schlumberger, we show them separately according to the affiliation. Schlumberger dominates industrial geophysics research, followed by CGG and BGP. In general, the number of publications by the major oilfield service companies grew steadily. Although oilfield service providers are dependent on oil prices, we surprisingly observe that after the 2014 crisis, the number of Schlumberger publications peaked for several consecutive years \citep{Schlumberger2014}, followed by a decline in 2018. It should be noted that in 2014 Schlumberger reported an outstanding revenue of \$48.6 billion. The dynamics of Schlumberger's papers reflect the dynamics of oil prices with a few years offset. The number of CGG publications follows crude oil prices too, but since 2014, the number of publications from CGG has only declined. CGG Annual report states extremely difficult market environment \citep{CGG2015}, and cost reduction measures: reduction in the number of employees from 11060 to 7353, 55\% general and administrative cost-cutting, 64\% cost of marine monthly structure cost-cutting\footnote{A comparison of 2013 and 2015 indicators}. In January 2020, CGG reported its exit from marine acquisition, sale of ships and measuring equipment to Shearwater company \citep{CGG2020}. This news suggests that we will see fewer publications from CGG in the coming years. 
 
 The change in the number of BGP publications shows a similar trend with the crude oil prices with one or two years of delay. In 2019 BGP became a leader by the number of publications among oil service providers.
 
@@ -250,9 +262,9 @@ The change in the number of BGP publications shows a similar trend with the crud
 \begin{figure}[ht!]
 
 \begin{overpic}[abs,unit=1mm,width=\textwidth]{oil_companies.png}
-\put(141,67){\citep{Aramco2018}}
+\put(141.5,67){\citep{Aramco2018}}
 \put(140.3,50.5){\citep{ExxonMobil2005}}
-\put(133,14){\citep{ExxonMobil2014}}
+\put(133.5,14){\citep{ExxonMobil2014}}
 \end{overpic}
 
 \caption{The average number of publications by oil production companies.}
@@ -265,16 +277,16 @@ Many oil and gas companies that no longer exist made significant contributions t
 Fig. \ref{oil_comps} displays five oil production companies with the most significant number of publications. The picture is conceptually different from oil service companies. For example, the number of publications by BP and ExxonMobil peaked in 2005 and nowadays, it is declining. 2005 was an outstanding year for ExxonMobil, with a net income of 36 billion and a 31\% increase in the number of employees \citep{ExxonMobil2005}. We observe steady growth in many economic indicators of the company since the beginning of 2000. At the same time, a decrease in the number of publications indicates a difficult period for the company. For instance, in 2014, we found only one paper from ExxonMobil, which has not happened over the past 15 years. The 2014 ExxonMobil Summary Annual Report \citep{ExxonMobil2014} shows that compared to 2013, market valuation at the end of the year decreased by 12\%, and we observe the decline in the stock market price of ExxonMobil in 2015. The decrease in profits immediately affects research financing. Saudi Aramco demonstrates steady growth; it had the biggest number of publications of all production companies in 2017 and 2018. Interestingly enough, the leadership was taken by PetroChina in 2019, followed by Shell and Saudi Aramco.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion}
-
-The amount of hidden information is astounding. Such a study is unique because we have at our disposal a history of the development of geophysics. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Discussion}
+%
+%The amount of hidden information is astounding. Such a study is unique because we have at our disposal a history of the development of geophysics. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 
-We analyzed metadata of 24,500 papers prepared by more than 75,000 authors during 38 years. Academic institutions from 86 countries and more than 2400 industrial companies contributed to the SEG Annual Conference from 1982 to 2019. The USA academia has the most significant impact in the proceedings of the SEG Annual Conference during the whole observation period. We observe that the number of papers from the Chinese academia growing, and it is almost equal to those of the USA. The activity of the companies at the SEG Annual Conference shows their economic condition, annual reports by CGG and ExxonMobil and other companies confirm this statement. Depending on the financial situation on the market, and the price of oil, the contribution of the academia and industry by publications changes in time. In 2018 we observed more abstracts from the academia, but in 2019 the number of publications from academia and industry were very close. In 2019 the most significant number of publication in the industry was made by BGP and PetroChina. The average number of authors per paper continues to grow over time in agreement with the global trend of Earth and Planetary science, but at a slower rate.
+We analyzed metadata of 24,500 papers prepared by more than 75,000 authors for     the 38 years. Academic institutions from 86 countries and more than 2400 industrial companies contributed to the SEG Annual Conference from 1982 to 2019. The USA academia has the most significant impact in the proceedings of the SEG Annual Conference during the whole observation period. We observe that the number of papers from the Chinese academia is growing, and it is almost equal to those of the USA. The activity of the companies at the SEG Annual Conference shows their economic condition, annual reports by CGG and ExxonMobil and other companies confirm this statement. Depending on the financial situation on the market, and the price of oil, the contribution of the academia and industry by publications changes in time. Over time, the number of companies that publish a small number of papers is growing. In 2018 we observed more abstracts from the academia, but in 2019 the number of publications from academia and industry was very close. In 2019 the most significant number of publications in the industry was made by BGP and PetroChina. The average number of authors per paper continues to grow over time in agreement with the global trend of Earth and Planetary science, but at a slower rate. Analysis of publication activity is a unique approach to processing large amounts of data, and the authors propose using this approach in other areas of the national economy.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -287,7 +299,7 @@ We analyzed metadata of 24,500 papers prepared by more than 75,000 authors durin
 \funding{Dr. Eltsov was supported by the KAUST Magnetic Sensor project, REP-2708.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\acknowledgments{Authors appreciate the responsiveness of the SEG team for permission to use digital data and especially SEG Digital Publications Manager, Jeno Mavzer, for the useful advice and help. The authors are grateful to their colleagues, and especially to Dr. Thomas Finkbeiner, for valuable and vital research recommendations. The authors are grateful to Ilya Kolganov for the useful advice on the design of the graphs. We also would like to acknowledge Dr. Charles Russell Severance for an informative Python course.}
+\acknowledgments{The authors are grateful to their colleagues, and especially to Dr. Thomas Finkbeiner, for valuable and vital research recommendations. The authors are grateful to Ilya Kolganov for the useful advice on the design of the graphs. We also would like to acknowledge Dr. Charles Russell Severance for an informative Python course.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \conflictsofinterest{The authors declare no conflict of interest.} 
@@ -303,10 +315,12 @@ BP & BP plc., formerly The British Petroleum Company and BP Amoco\\
 CGG & Compagnie Générale de Géophysique \\
 CMP & Common Mid Point\\
 EAGE & European Association of Geoscientists and Engineers\\
+GB & Giga Byte\\
 GDP & Gross Domestic Product\\
 GERD & Gross domestic Expenditure on Research and Development\\
-GPU & Graphics Processing Unit\\
 HTML & HyperText Markup Language\\
+ICT & Information and Communication Technology \\
+KTH & KTH Royal Institute of Technology in Stockholm\\
 NLTK & Natural Language Toolkit\\
 NMO & Normal Moveout\\
 PDF & Portable Document Format \\
@@ -315,7 +329,9 @@ R\&D & Research and Development\\
 SEG & Society of Exploration Geophysicists\\
 SPE & Society of Petroleum Engineers\\
 SPWLA & Society of Petrophysicists and Well Log Analysts \\
-USA & The United States of America
+Wt & Watt\\
+USA & The United States of America\\
+ZB & Zetta Byte
 \end{tabular}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% optional
@@ -401,17 +417,35 @@ USA & The United States of America
 \begin{thebibliography}{999}
 \providecommand{\natexlab}[1]{#1}
 
-\bibitem[Glauner \em{et~al.}(2018)Glauner, Valtchev, and State]{Glauner2018}
-Glauner, P.; Valtchev, P.; State, R.
-\newblock {Impact of Biases in Big Data}.
-\newblock In~Proceedings of the European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, Bruges, Belgium, 25-27 April~2018; pp 645--654.
+\bibitem[Reinsel \em{et~al.}(2018)Reinsel, Gantz, and Rydning]{Reinsel2018}
+Reinsel D.; Gantz J.; Rydning J.
+\newblock {The Digitization of the World From Edge to Core}. \newblock {Available online: https://www.seagate.com/files/www-content/our-story/trends/files/idc-seagate-dataage-whitepaper.pdf/ (Accessed on 4 March 2020)}
 
-\bibitem[Kaplan \em{et~al.}(2014)Kaplan, Chambers, and Glasgow]{Kaplan2014}
-Kaplan, R.; Chambers, D.A.; Glasgow, R.E.
-\newblock {Big Data and Large Sample Size: A Cautionary Note on the Potential for Bias}.
-\newblock {\em CTS Journal} {\bf 2014}, {\em 7}, {4}, ~342--346.
+
+\bibitem[Costenaro \em{et~al.}(2012)Costenaro, and Duer]{Costenaro2012}
+Costenaro D.; Duer A.
+\newblock {The Megawatts behind Your Megabytes: Going from Data-Center to Desktop}. \newblock {Available online: https://www.aceee.org/files/proceedings/2012/data/papers/0193-000409.pdf (Accessed on 4 March 2020)}
+
+\bibitem[Van Heddeghem \em{et~al.}(2014)Van Heddeghem, Lambert, Lannoo, Colle, Pickavet, and Demeester]{Heddeghem2014}
+Heddeghem, V. W.; Lambert, S.; Lannoo, B.; Colle, D.; Pickavet, M.; Demeester, P.
+\newblock {Trends in worldwide ICT electricity consumption from 2007 to 2012}.
+\newblock {\em Computer Communications} {\bf 2014}, {\em 50}, {9}, ~64--76.
 \newblock
- doi:{\changeurlcolor{black}\href{ https://doi.org/10.1111/cts.12178}{\detokenize{10.1111/cts.12178}}}.
+ doi:{\changeurlcolor{black}\href{https://doi.org/10.1016/j.comcom.2014.02.008}{\detokenize{10.1016/j.comcom.2014.02.008}}}.
+
+
+\bibitem[Dulac \em{et~al.}(2012)Dulac, Abergel, and Delmastro]{Dulac2019}
+Dulac J.; Abergel T.; Delmastro C.
+\newblock {Data centres and data transmission networks}. \newblock {Available online: https://www.iea.org/reports/tracking-buildings/data-centres-and-data-transmission-networks (Accessed on 4 March 2020)}
+
+\bibitem[(2019)]{KTH2019}
+\newblock {Internet drar 10\% av världens elanvändning - och andelen stiger}. \newblock {Available online: https://cornucopia.cornubot.se/2019/02/internet-drar-10-av-varldens.html?m=1 (Accessed on 4 March 2020)}
+
+\bibitem[BP (2019 )]{BP2019}
+BP.
+\newblock {\emph{BP Statistical Review of World Energy, 68th edition}};
+\newblock Report; {Pureprint Group Limited, UK}, 2019 .
+
 
 \bibitem[SEG, (2019)]{SEG}
 \newblock {SEG Technical Program Expanded Abstracts. Available online: https://library.seg.org/series/segeab (Accessed on 2 December 2019)}.
@@ -450,6 +484,13 @@ Ni, X.
 \bibitem[CEIC (2020)]{CEIC2020}
 \newblock {Global Economic Data, Indicators, Charts\& Forecasts, CEIC. Available online: https://www.ceicdata.com (Accessed on 10 February 2020)}.
 
+\bibitem[Schlumberger(2014)]{Schlumberger2014}
+Schlumberger.
+\newblock {\emph{2014 Annual Report}};
+\newblock Report; {Schlumberger: Paris, France} 2015.
+
+
+
 \bibitem[CGG(2015)]{CGG2015}
 Compagnie Générale de Géophysique
 \newblock {\emph{ANNUAL REPORT 2015}};
@@ -459,15 +500,10 @@ Compagnie Générale de Géophysique
 Compagnie Générale de Géophysique
 \newblock {CGG completes its exit from marine acquisition. Available online: https://www.cgg.com/en/Investors/Press-Releases/2020/01/CGG-Completes-its-Exit-from-Marine-\\Acquisition (Accessed on 2 February 2020)}.
 
-
-\bibitem[Schlumberger(2014)]{Schlumberger2014}
-Schlumberger.
-\newblock {\emph{2014 Annual Report}};
-\newblock Report; {Schlumberger: Paris, France} 2015.
-
 \bibitem[Saudi Aramco(2018)]{Aramco2018}
 Saudi Aramco.
 \newblock {Saudi Arabian Oil Company, Consolidated financial statements for the year ended december 31, 2018. Available online: https://www.saudiaramco.com/-/media/publications/corporate-reports/saudi-aramco-results-2017-2018\\-full-financials.pdf (Accessed on 11 February 2020)}.
+
 
 \bibitem[ExxonMobil(2005)]{ExxonMobil2005}
 ExxonMobil.
